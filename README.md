@@ -2,9 +2,9 @@
 
 # Tu primera semana como Data Scientist
 
-> *"Como pasamos de tener unos datos de empleados a una propuesta de retención del talento."*
+> ## *"Como pasamos de tener unos datos de empleados a una propuesta de retención del talento."*
 
-En esta experiencia de [**Data Science for Business**](https://datascience4business.com/) recorrerás un proyecto
+En esta experiencia desarrollada por [**Data Science for Business**](https://datascience4business.com/) recorrerás un proyecto
 paso a paso: analizarás un problema de negocio, construirás un modelo
 predictivo y utilizarás sus resultados en un dashboard con informes
 personalizados mediante inteligencia artificial.
@@ -101,7 +101,6 @@ habilitados para tu cuenta.
 Las predicciones orientan el análisis: no garantizan que un empleado
 vaya a abandonar ni que una acción concreta evite su salida.
 
----
 
 ## Tu siguiente paso como Data Scientist
 
@@ -111,7 +110,6 @@ Con el **Python Data Science Mastery · IA Edition** podrás desarrollar un perf
 conocimientos técnicos, visión de negocio e inteligencia artificial aplicada.
 
 Aquí tienes toda la información:
-
 
 <a href="https://datascience4business.com/lp/pdsm2-ia-edition/">
   <img src="PDSM_IA_Edition.png"
