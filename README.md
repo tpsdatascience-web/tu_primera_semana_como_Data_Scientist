@@ -98,6 +98,12 @@ habilitados para tu cuenta.
 - **Streamlit:** explorar los resultados en un dashboard.
 - **Gemini:** redactar propuestas de retención en lenguaje natural.
 
+<a href="[URL_DE_TU_PAGINA](https://datascience4business.com/lp/pdsm2-ia-edition/)">
+  <img src="aplicacion/imagenes/experiencia-datascience.jpeg"
+       alt="Participa en Tu primera semana como Data Scientist"
+       width="800">
+</a>
+
 Las predicciones orientan el análisis: no garantizan que un empleado
 vaya a abandonar ni que una acción concreta evite su salida.
 
