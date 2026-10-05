@@ -2,7 +2,7 @@
 
 # Tu primera semana como Data Scientist
 
-*"Como pasamos de tener unos datos de empleados a una propuesta de retención del talento."*
+> *"Como pasamos de tener unos datos de empleados a una propuesta de retención del talento."*
 
 En esta experiencia de [**Data Science for Business**](https://datascience4business.com/) recorrerás un proyecto
 paso a paso: analizarás un problema de negocio, construirás un modelo
