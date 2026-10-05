@@ -101,6 +101,17 @@ habilitados para tu cuenta.
 Las predicciones orientan el análisis: no garantizan que un empleado
 vaya a abandonar ni que una acción concreta evite su salida.
 
+---
+
+## Tu siguiente paso como Data Scientist
+
+¿Quieres seguir aprendiendo a convertir datos en decisiones de negocio?
+
+Con el **Python Data Science Mastery · IA Edition** podrás desarrollar un perfil que combine
+conocimientos técnicos, visión de negocio e inteligencia artificial aplicada.
+
+Aquí tienes toda la información:
+
 
 <a href="https://datascience4business.com/lp/pdsm2-ia-edition/">
   <img src="PDSM_IA_Edition.png"
