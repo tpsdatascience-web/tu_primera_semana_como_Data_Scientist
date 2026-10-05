@@ -72,7 +72,7 @@ la disponibilidad de recursos de tu cuenta.
 Este repositorio incluye el notebook del día 1.
 
 Los notebooks de los días 2 y 3 estarán disponibles en la plataforma
-para su descarga, Cuando los tengas, añádelos a la carpeta `notebooks` 
+para su descarga, cuando los tengas, añádelos a la carpeta `notebooks` 
 de tu copia del proyecto.
 
 Conserva sus nombres y sigue las instrucciones de cada jornada.
@@ -111,7 +111,9 @@ conocimientos técnicos, visión de negocio e inteligencia artificial aplicada.
 
 Aquí tienes toda la información:
 
-<a href="https://datascience4business.com/lp/pdsm2-ia-edition/">
+<a href="https://datascience4business.com/lp/pdsm2-ia-edition/"
+   target="_blank"
+   rel="noopener noreferrer">
   <img src="PDSM_IA_Edition.png"
        alt="Descubre Python Data Science Mastery IA Edition"
        width="800">
