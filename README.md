@@ -71,9 +71,9 @@ la disponibilidad de recursos de tu cuenta.
 
 Este repositorio incluye el notebook del día 1.
 
-Los notebooks de los días 2 y 3 se entregan por correo electrónico
-a los participantes de la experiencia. Cuando los recibas,
-añádelos a la carpeta `notebooks` de tu copia del proyecto.
+Los notebooks de los días 2 y 3 estarán disponibles en la plataforma
+para su descarga, Cuando los tengas, añádelos a la carpeta `notebooks` 
+de tu copia del proyecto.
 
 Conserva sus nombres y sigue las instrucciones de cada jornada.
 
@@ -82,8 +82,8 @@ Conserva sus nombres y sigue las instrucciones de cada jornada.
 Para generar los informes del día 3 necesitarás una clave personal
 de la API de Gemini.
 
-La configurarás como un secreto de GitHub Codespaces con el nombre
-`GEMINI_API_KEY`, autorizando el acceso al repositorio de tu fork.
+En el día 3 te enseñaremos a generarla y a configurar GitHub para que
+todo funcione perfectamente.
 
 No necesitas una clave para empezar el análisis del día 1.
 La disponibilidad de Gemini dependerá de los modelos y las cuotas
