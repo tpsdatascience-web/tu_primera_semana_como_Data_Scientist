@@ -123,7 +123,7 @@ def icono_accion(categoria):
 
 # --- Lógica de presentación ----------------------------------------------------
 def nivel_riesgo(scoring):
-    if scoring >= 0.6:
+    if scoring > 0.6:
         return {"clase": "alto", "etiqueta": "alto", "color": "#b42318"}
     if scoring >= 0.3:
         return {"clase": "medio", "etiqueta": "medio", "color": "#b54708"}
