@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <title>Plan de retención · Empleado {{ e.empleado.id }}</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 14mm 14mm 12mm;
+    }
+
+    :root {
+      --tinta: #1f2937;
+      --suave: #6b7280;
+      --tenue: #9ca3af;
+      --linea: #e5e7eb;
+      --fondo: #f6f7f9;
+      --marca: #1e3a8a;
+      --marca-claro: #e8edf9;
+      --rojo: #b42318;
+      --rojo-claro: #fdecea;
+      --ambar: #b54708;
+      --ambar-claro: #fef4e6;
+      --verde: #067647;
+      --verde-claro: #e7f6ee;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Inter", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      color: var(--tinta);
+      font-size: 9.6pt;
+      line-height: 1.45;
+      margin: 0;
+    }
+
+    .ico {
+      width: 1.15em;
+      height: 1.15em;
+      vertical-align: -0.2em;
+      stroke-width: 1.8;
+    }
+
+    .ico-lg {
+      width: 22px;
+      height: 22px;
+    }
+
+    h2 {
+      font-size: 11pt;
+      font-weight: 600;
+      margin: 0 0 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--marca);
+    }
+
+    h2 .meta {
+      font-weight: 400;
+      font-size: 8.5pt;
+      color: var(--tenue);
+      margin-left: 4px;
+    }
+
+    section {
+      margin-top: 13px;
+      page-break-inside: avoid;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .muted {
+      color: var(--suave);
+    }
+
+    .small {
+      font-size: 8.3pt;
+    }
+
+    .banda {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 8.3pt;
+      color: var(--suave);
+      border-bottom: 2px solid var(--marca);
+      padding-bottom: 5px;
+    }
+
+    .banda b {
+      color: var(--marca);
+      letter-spacing: .02em;
+    }
+
+    .cabecera {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 12px;
+      gap: 12px;
+    }
+
+    .persona {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .avatar {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: var(--marca-claro);
+      color: var(--marca);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .persona h1 {
+      font-size: 15pt;
+      margin: 0;
+      font-weight: 600;
+    }
+
+    .badge {
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 9pt;
+      white-space: nowrap;
+    }
+
+    .riesgo-alto {
+      background: var(--rojo-claro);
+      color: var(--rojo);
+    }
+
+    .riesgo-medio {
+      background: var(--ambar-claro);
+      color: var(--ambar);
+    }
+
+    .riesgo-bajo {
+      background: var(--verde-claro);
+      color: var(--verde);
+    }
+
+    .resumen {
+      margin-top: 10px;
+      color: var(--suave);
+    }
+
+    .kpis {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .kpi {
+      flex: 1;
+      background: var(--fondo);
+      border-radius: 8px;
+      padding: 9px 11px;
+    }
+
+    .kpi .lbl {
+      font-size: 8pt;
+      color: var(--suave);
+    }
+
+    .kpi .val {
+      font-size: 15pt;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    .barra {
+      height: 6px;
+      background: var(--linea);
+      border-radius: 3px;
+      margin-top: 5px;
+    }
+
+    .barra>div {
+      height: 6px;
+      border-radius: 3px;
+    }
+
+    .pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .pill {
+      background: var(--marca-claro);
+      color: var(--marca);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 8.6pt;
+    }
+
+    .aviso {
+      margin-top: 6px;
+      font-size: 8pt;
+      color: var(--tenue);
+    }
+
+    .acciones {
+      display: flex;
+      gap: 8px;
+    }
+
+    .accion {
+      flex: 1;
+      border: 1px solid var(--linea);
+      border-radius: 8px;
+      padding: 10px 11px;
+    }
+
+    .accion .icono {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      background: var(--verde-claro);
+      color: var(--verde);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .accion h3 {
+      font-size: 9.8pt;
+      margin: 7px 0 3px;
+      font-weight: 600;
+    }
+
+    .accion .dato {
+      display: inline-block;
+      font-size: 7.9pt;
+      background: var(--fondo);
+      color: var(--suave);
+      padding: 2px 7px;
+      border-radius: 4px;
+      margin-bottom: 5px;
+    }
+
+    .salario {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .salario .barras {
+      flex: 1.3;
+    }
+
+    .fila {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 4px 0;
+      font-size: 8.6pt;
+    }
+
+    .fila .nom {
+      width: 72px;
+      color: var(--suave);
+    }
+
+    .fila .trk {
+      flex: 1;
+    }
+
+    .fila .trk>div {
+      height: 11px;
+      border-radius: 3px;
+    }
+
+    .fila .cif {
+      width: 70px;
+      text-align: right;
+      font-weight: 600;
+    }
+
+    .salario .conclusion {
+      flex: 1;
+      border-radius: 8px;
+      padding: 9px 11px;
+      font-size: 8.8pt;
+    }
+
+    .timeline {
+      display: flex;
+      gap: 8px;
+    }
+
+    .hito {
+      flex: 1;
+      border-top: 3px solid var(--marca);
+      padding-top: 6px;
+    }
+
+    .hito .cuando {
+      font-size: 8pt;
+      color: var(--marca);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .hito h3 {
+      font-size: 9.4pt;
+      margin: 2px 0 2px;
+      font-weight: 600;
+    }
+
+    .pie {
+      margin-top: 14px;
+      padding-top: 6px;
+      border-top: 1px solid var(--linea);
+      font-size: 7.6pt;
+      color: var(--tenue);
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="banda"><b>DATA SCIENCE FOR BUSINESS</b><span>Informe de retención de talento · {{ fecha }}</span></div>
+
+  <!-- 1. Perfil y riesgo -->
+  <div class="cabecera">
+    <div class="persona">
+      <div class="avatar">{{ icon('user', 'ico-lg') }}</div>
+      <div>
+        <p class="small" style="color: var(--marca); font-weight: 600">EMPLEADO {{ e.empleado.id }}</p>
+        <h1>{{ e.empleado.puesto }}</h1>
+        {% set partes = [e.empleado.departamento, ('Nivel ' ~ e.empleado.nivel) if e.empleado.nivel else none,
+        e.empleado.formacion,
+        (anios(e.empleado.antiguedad_anios) ~ ' en la empresa') if e.empleado.antiguedad_anios is not none else none] %}
+        <p class="muted">{{ partes | select | join(' · ') }}</p>
+      </div>
+    </div>
+    <span class="badge riesgo-{{ riesgo.clase }}">{{ icon('alert-triangle') }} Riesgo {{ riesgo.etiqueta }}</span>
+  </div>
+
+  <p class="resumen">{{ e.textos.resumen }}</p>
+
+  <div class="kpis">
+    <div class="kpi">
+      <div class="lbl">{{ icon('gauge') }} Riesgo de salida</div>
+      <div class="val" style="color: {{ riesgo.color }}">{{ num(e.indicadores.scoring * 100, 1) }} %</div>
+      <div class="barra">
+        <div style="width: {{ ((e.indicadores.scoring * 100)|round|int) ~ '%' }}; background: {{ riesgo.color }}"></div>
+      </div>
+    </div>
+    <div class="kpi">
+      <div class="lbl">{{ icon('cash') }} Impacto estimado</div>
+      <div class="val">{{ eur(e.indicadores.impacto, 2) }}</div>
+    </div>
+    <div class="kpi">
+      <div class="lbl">{{ icon('heart-handshake') }} Implicación</div>
+      <div class="val">{{ e.indicadores.implicacion }}</div>
+    </div>
+    <div class="kpi">
+      <div class="lbl">{{ icon('mood-smile') }} Satisfacción</div>
+      <div class="val">{{ e.indicadores.satisfaccion }}</div>
+    </div>
+    <div class="kpi">
+      <div class="lbl">{{ icon('star') }} Desempeño</div>
+      <div class="val">{{ e.indicadores.desempeno }}</div>
+    </div>
+  </div>
+
+  <!-- 2. Condiciones del modelo -->
+  <section>
+    <h2>{{ icon('binary-tree') }} Por qué está en este grupo <span class="meta">nodo {{ e.modelo.nodo }} · {{
+        e.modelo.casos }} casos de entrenamiento</span></h2>
+    <div class="pills">{% for c in (e.textos.condiciones or e.modelo.condiciones) %}<span class="pill">{{ c }}</span>{%
+      endfor %}</div>
+    <p class="aviso">{{ icon('info-circle') }} Son asociaciones estadísticas del árbol de decisión sobre datos
+      históricos, no causas demostradas. El scoring es una estimación, no una certeza.</p>
+  </section>
+
+  <!-- 3. Acciones -->
+  <section>
+    <h2>{{ icon('target-arrow') }} Acciones de retención</h2>
+    <div class="acciones">
+      {% for a in e.textos.acciones %}
+      <div class="accion">
+        <div class="icono">{{ icon(icono_accion(a.categoria), 'ico-lg') }}</div>
+        <h3>{{ a.titulo }}</h3>
+        {% if a.dato_clave %}<span class="dato">{{ a.dato_clave }}</span>{% endif %}
+        <p class="small muted">{{ a.detalle }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- 4. Salario -->
+  <section>
+    <h2>{{ icon('scale') }} Valoración salarial {% if e.salario.n_comparables %}<span class="meta">{{
+        e.salario.n_comparables }} compañeros comparables</span>{% endif %}</h2>
+    <div class="salario">
+      {% if not sal.sin_referencia %}
+      <div class="barras">
+        <div class="fila"><span class="nom">Empleado</span>
+          <div class="trk">
+            <div style="width: {{ sal.pct_emp }}%; background: var(--marca)"></div>
+          </div><span class="cif">{{ eur(e.salario.empleado) }}</span>
+        </div>
+        <div class="fila"><span class="nom">Referencia</span>
+          <div class="trk">
+            <div style="width: {{ sal.pct_ref }}%; background: var(--tenue)"></div>
+          </div><span class="cif">{{ eur(e.salario.referencia) }}</span>
+        </div>
+        <p class="small muted">Importes mensuales · diferencia {{ eur(sal.diferencia) }}/mes · coste anual de
+          equiparación {{ eur(sal.coste_anual) }}</p>
+      </div>
+      {% endif %}
+      <div class="conclusion" style="background: {{ sal.fondo }}; color: {{ sal.color }}">
+        {{ icon(sal.icono) }} {{ e.textos.valoracion_salarial }}
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Seguimiento -->
+  <section>
+    <h2>{{ icon('calendar-event') }} Seguimiento en los próximos 30 días</h2>
+    <div class="timeline">
+      {% for h in e.textos.seguimiento %}
+      <div class="hito">
+        <div class="cuando">{{ icon('clock') }} {{ h.momento }}</div>
+        <h3>{{ h.titulo }}</h3>
+        <p class="small muted">{{ h.detalle }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <div class="pie"><span>Plan de retención · Empleado {{ e.empleado.id }}</span><span>Documento confidencial · uso
+      interno de RR. HH.</span></div>
+</body>
+
+</html>

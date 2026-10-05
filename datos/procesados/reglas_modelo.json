@@ -1,0 +1,97 @@
+{
+  "3": {
+    "condiciones": [
+      "anos_experiencia <= 1.500000",
+      "puesto_Research Scientist <= 0.500000",
+      "estado_civil_Single <= 0.500000"
+    ],
+    "scoring_abandono": 0.6,
+    "empleados_entrenamiento": 20
+  },
+  "4": {
+    "condiciones": [
+      "anos_experiencia <= 1.500000",
+      "puesto_Research Scientist <= 0.500000",
+      "estado_civil_Single > 0.500000"
+    ],
+    "scoring_abandono": 0.9,
+    "empleados_entrenamiento": 20
+  },
+  "5": {
+    "condiciones": [
+      "anos_experiencia <= 1.500000",
+      "puesto_Research Scientist > 0.500000"
+    ],
+    "scoring_abandono": 0.3,
+    "empleados_entrenamiento": 20
+  },
+  "8": {
+    "condiciones": [
+      "anos_experiencia > 1.500000",
+      "horas_extra_No <= 0.500000",
+      "salario_ano <= 29712.000000"
+    ],
+    "scoring_abandono": 0.6285714285714286,
+    "empleados_entrenamiento": 35
+  },
+  "10": {
+    "condiciones": [
+      "anos_experiencia > 1.500000",
+      "horas_extra_No <= 0.500000",
+      "salario_ano > 29712.000000",
+      "nivel_acciones <= 0.500000"
+    ],
+    "scoring_abandono": 0.32,
+    "empleados_entrenamiento": 100
+  },
+  "11": {
+    "condiciones": [
+      "anos_experiencia > 1.500000",
+      "horas_extra_No <= 0.500000",
+      "salario_ano > 29712.000000",
+      "nivel_acciones > 0.500000"
+    ],
+    "scoring_abandono": 0.10135135135135136,
+    "empleados_entrenamiento": 148
+  },
+  "14": {
+    "condiciones": [
+      "anos_experiencia > 1.500000",
+      "horas_extra_No > 0.500000",
+      "nivel_acciones <= 0.500000",
+      "num_empresas_anteriores <= 4.500000"
+    ],
+    "scoring_abandono": 0.0967741935483871,
+    "empleados_entrenamiento": 217
+  },
+  "15": {
+    "condiciones": [
+      "anos_experiencia > 1.500000",
+      "horas_extra_No > 0.500000",
+      "nivel_acciones <= 0.500000",
+      "num_empresas_anteriores > 4.500000"
+    ],
+    "scoring_abandono": 0.2647058823529412,
+    "empleados_entrenamiento": 68
+  },
+  "17": {
+    "condiciones": [
+      "anos_experiencia > 1.500000",
+      "horas_extra_No > 0.500000",
+      "nivel_acciones > 0.500000",
+      "departamento_Research & Development <= 0.500000"
+    ],
+    "scoring_abandono": 0.0948905109489051,
+    "empleados_entrenamiento": 137
+  },
+  "18": {
+    "condiciones": [
+      "anos_experiencia > 1.500000",
+      "horas_extra_No > 0.500000",
+      "nivel_acciones > 0.500000",
+      "departamento_Research & Development > 0.500000"
+    ],
+    "scoring_abandono": 0.03409090909090909,
+    "empleados_entrenamiento": 264
+  }
+}

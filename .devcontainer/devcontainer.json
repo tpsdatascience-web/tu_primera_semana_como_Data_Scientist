@@ -1,0 +1,19 @@
+{
+  "name": "TPS Data Science",
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.12.11"
+    }
+  },
+  "forwardPorts": [8501],
+  "postCreateCommand": "python -m pip install -r requirements.txt",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-toolsai.jupyter",
+        "ms-python.python"
+      ]
+    }
+  }
+}

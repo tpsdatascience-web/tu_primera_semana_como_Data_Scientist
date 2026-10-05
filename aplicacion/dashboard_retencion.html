@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Data Science for Business · Retención del talento</title>
+<style>
+:root{font-family:system-ui,sans-serif;color:#172b39;background:#f3f6f8;--accent:#d66523}*{box-sizing:border-box}body{margin:0}main{max-width:1200px;margin:auto;padding:32px 24px}h1{font-size:clamp(26px,4vw,40px);margin:8px 0}h2{font-size:22px;margin-top:0}.tag{color:#a44717;font-weight:700;letter-spacing:.06em;font-size:12px}p{line-height:1.5;color:#536370}.panel,.kpi{background:white;border:1px solid #dfe6eb;border-radius:16px;padding:24px;margin-top:20px}.toolbar{display:flex;gap:18px;align-items:end;flex-wrap:wrap}label{display:grid;gap:6px;font-size:13px;font-weight:600}input,select,button{font:inherit;padding:10px;border:1px solid #cad5dd;border-radius:8px;background:white}button{cursor:pointer}button:hover{border-color:var(--accent)}button:focus-visible{outline:3px solid #e77b3e;outline-offset:3px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.kpi strong{display:block;font-size:32px;margin:10px 0}.kpi small,.muted{color:#637583;font-size:13px}.matrix{display:grid;grid-template-columns:82px repeat(3,1fr);gap:10px;margin-top:20px}.axis{text-align:center;align-self:center;font-size:13px;color:#536370}.cell{text-align:left;min-height:112px;border:1px solid #d7e3e9;border-radius:12px;background:#eef5f7;padding:16px}.cell strong{display:block;font-size:30px}.cell span{font-size:12px}.cell.priority{background:#fff0e6;border-color:#e7b58f}.cell[aria-pressed=true]{outline:3px solid var(--accent);outline-offset:0}.tablewrap{overflow:auto}table{border-collapse:collapse;width:100%;font-size:14px;white-space:nowrap}th,td{text-align:left;padding:14px 10px;border-bottom:1px solid #e7edf1}th{color:#627583;font-size:12px}details{margin-top:18px}summary{cursor:pointer;font-weight:600}.settings{display:flex;gap:14px;flex-wrap:wrap;padding-top:14px}.settings input{width:130px}.status{font-size:14px;margin-top:12px}.error{color:#a22e20}.badge{padding:5px 9px;border-radius:6px;background:#fff0e6;font-weight:600}.pagination{display:flex;gap:12px;justify-content:end;align-items:center;margin-top:18px}dialog{width:min(650px,92vw);max-height:85vh;border:0;border-radius:16px;padding:26px;box-shadow:0 20px 80px #0004}dialog::backdrop{background:#15293888}.profile{display:grid;grid-template-columns:1fr 1fr;gap:0 18px}.profile p{margin:0;padding:10px 0;border-bottom:1px solid #e7edf1;overflow-wrap:anywhere}.profile b{display:block;color:#172b39;font-size:12px}.right{display:flex;justify-content:space-between;align-items:center;gap:12px}button:disabled{opacity:.45;cursor:default}@media(max-width:700px){main{padding:20px 12px}.cards{grid-template-columns:1fr;gap:0}.panel{padding:16px}.matrix{grid-template-columns:45px repeat(3,1fr);gap:6px}.cell{padding:10px;min-height:100px}.cell span{font-size:10px}.profile{grid-template-columns:1fr}}
+
+/* Estilo inspirado en la referencia visual del docente */
+:root{color-scheme:dark;color:#e7ecf4;background:#090c14;--accent:#f59c39}body{background:#090c14}main{margin-left:210px;max-width:none;padding:28px 30px}.sidebar{position:fixed;inset:0 auto 0 0;width:210px;background:#0e111b;border-right:1px solid #242a39;padding:24px 16px;display:flex;flex-direction:column;gap:10px}.brand{font-size:17px;font-weight:750;margin-bottom:26px}.brand small{display:block;color:#7e91ae;font-size:11px;font-weight:400;margin-top:6px}.sidebar .group{font-size:10px;letter-spacing:.12em;color:#8292ae;margin:12px 10px}.sidebar a{color:#aab9d0;text-decoration:none;padding:12px;border-radius:6px;font-size:13px}.sidebar a:hover,.sidebar a:focus{background:#192031;color:#fff}.sidebar footer{margin-top:auto;font-size:12px;color:#8292ae;line-height:1.7;padding:10px}header{border-bottom:1px solid #242a39;padding-bottom:16px}h1{font-size:30px}h2{font-size:19px}.tag{color:#f7ae55}p,.muted,.kpi small{color:#a0aec5}.panel,.kpi{background:#0e121d;border:1px solid #242a39;border-radius:10px;padding:20px}.cards{gap:14px}.kpi strong{color:#f1f5fb;font-size:30px}.kpi span{font-size:13px;color:#b9c5d8}input,select,button{background:#151b29;border-color:#30394d;color:#e7ecf4}input[type=file]{max-width:340px}button:hover{background:#202a3c;border-color:#f59c39}.axis{color:#aab9d0}.cell{background:#111e29;border-color:#284456}.cell.priority{background:#302216;border-color:#996227}.cell strong{color:#f2f6fc}.cell[aria-pressed=true]{background:#302216}.cell:nth-child(4n+2){border-color:#826139}th{background:#161c2a;color:#91a4c1;font-size:11px;letter-spacing:.03em}th,td{border-bottom-color:#242a39}tbody tr:hover{background:#141c2b}dialog{background:#111725;color:#e7ecf4;border:1px solid #30394d}.profile p{border-color:#273146}.profile b{color:#b6c6df}.error{color:#ff9696}.settings input{width:150px}.explanation{background:#141b2a;border-left:3px solid #f59c39;padding:12px 16px;font-size:13px;margin-top:16px}.explanation p{margin:5px 0}.badge{background:#302216;color:#ffbc70}.toolbar label{color:#becbdf}.panel,.cards{scroll-margin-top:16px}@media(min-width:1600px){main{max-width:1550px}}@media(max-width:850px){.sidebar{position:static;width:auto;padding:14px 18px;flex-direction:row;align-items:center;flex-wrap:wrap}.sidebar .brand{margin:0 auto 0 0}.sidebar .group,.sidebar footer{display:none}main{margin-left:0;padding:20px 14px}h1{font-size:25px}}@media(max-width:700px){.panel{padding:14px}.cell{padding:9px}.settings input{width:135px}}
+
+.kpihead{display:flex;align-items:center;justify-content:space-between;gap:12px}.kpi .icon{font-size:24px;display:grid;place-items:center;width:42px;height:42px;border-radius:10px;background:#182e43;color:#78bbff}.classification-layout{display:grid;grid-template-columns:2fr 1fr;gap:32px}.controls h3,.gaugebox h3{font-size:15px;margin:18px 0 12px}.bands{display:grid;grid-template-columns:30fr 30fr 40fr;border-radius:8px;overflow:hidden;min-height:36px}.bands span{display:grid;place-items:center;font-size:12px;min-width:0;overflow:hidden}.bands span:nth-child(1){background:#18584f}.bands span:nth-child(2){background:#725923}.bands span:nth-child(3){background:#7e3b29}.scale{display:flex;justify-content:space-between;color:#8ea3be;font-size:11px;margin:8px 0 18px}.sliderlabel{grid-template-columns:1fr auto;margin:16px 0}.sliderlabel input{grid-column:1/-1;width:100%;padding:0;accent-color:#66b5ff;cursor:pointer}.sliderlabel output{color:#83c2ff}.settings{display:grid;grid-template-columns:1fr 1fr}.settings input{width:100%}.primary{display:block;width:100%;margin-top:20px;background:#2874bf;border-color:#489ce5;color:white;font-weight:700;padding:14px}.primary:hover{background:#3387d7;border-color:#79bcff}.gaugebox{align-self:center;text-align:center;border:1px solid #293749;border-radius:12px;padding:20px;background:#111a28}#gauge svg{width:100%;max-width:280px}.segment-summary{display:flex;flex-wrap:wrap;gap:12px 28px;padding:14px 0;color:#a8bdd8;font-size:14px}.segment-summary b{color:#81c3ff}.cell.priority{background:#1b2430;border-color:#697c94}.cell[aria-pressed=true],.cell.priority[aria-pressed=true]{background:#153f60;border-color:#6fc6ff;outline:3px solid #6fc6ff}.cell[aria-pressed=true]::after{content:'✓ Seleccionado';display:block;margin-top:8px;color:#a0ddff;font-size:12px;font-weight:700}.cell:hover{background:#1c3045}.pdfbutton{background:#175347;color:#acf0dc;border-color:#2a8b75;white-space:nowrap}.pdfbutton:disabled{opacity:.7}.tablewrap{padding-bottom:6px}#pending{min-height:20px}@media(max-width:850px){.classification-layout{grid-template-columns:1fr}.gaugebox{max-width:380px;width:100%;justify-self:center}}
+
+
+
+
+
+.matrix-layout{display:grid;grid-template-columns:minmax(0,3fr) minmax(200px,1fr);gap:24px;align-items:center}.matrix-layout .gaugebox{padding:16px}.matrix-layout .gaugebox h3{font-size:14px}.selection-summary{padding:14px 16px;border:1px solid #386387;background:#132c43;border-radius:8px;color:#b9dfff;font-size:14px}.score-distribution{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}.score-chip{padding:9px 12px;background:#15253a;border:1px solid #304b69;border-radius:8px;font-size:12px;color:#b6d4f1}#matrixAll{color:#b0ebd6;border-color:#398774;background:#183c33}@media(max-width:1000px){.matrix-layout{grid-template-columns:1fr}.matrix-layout .gaugebox{max-width:320px;justify-self:center}.right{flex-wrap:wrap}}
+
+/* Business-first presentation */
+body{font-size:16px}p{line-height:1.65}h2{font-size:23px}.sidebar a{font-size:15px}.brand small,.sidebar footer{font-size:13px}.muted,.kpi small,.status{font-size:15px}.cards{grid-template-columns:repeat(4,minmax(0,1fr));align-items:stretch}.kpi{padding:22px;margin-top:20px}.kpi span{font-size:16px}.kpi strong{font-size:clamp(25px,2.3vw,36px);overflow-wrap:anywhere}.kpi .icon{flex-shrink:0;width:52px;height:52px;background:linear-gradient(135deg,#224970,#15253f);box-shadow:0 5px 20px #0003}.icon svg{width:30px;height:30px}.kpihead{min-height:64px}.global-risk .gaugebox{border:0;padding:0;background:none}.global-risk h3{font-size:17px;margin:0 0 8px}.global-risk .gaugebox p{margin:8px 0 0;font-size:14px}#gauge svg{max-width:220px}.matrix-layout{display:block}.matrix{grid-template-columns:100px repeat(3,1fr);gap:14px}.axis{font-size:15px;font-weight:650}.cell{min-height:140px;padding:20px;transition:background .18s,transform .18s}.cell:hover{transform:translateY(-2px)}.cell strong{font-size:40px}.cell span{font-size:14px}.cell[aria-pressed=true]::after{font-size:14px}.segment-summary{font-size:16px}.business-guide{border-top:1px solid #29354a;padding-top:18px}.business-guide summary{font-size:16px}.guide-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:16px}.guide-grid h3{font-size:17px}.level{display:flex;justify-content:space-between;gap:16px;padding:12px 14px;margin:8px 0;border-radius:8px;font-size:15px;border-left:4px solid}.low{border-color:#3cc5ae;background:#133b36;color:#baf1e4}.medium{border-color:#e1b44f;background:#392e18;color:#fbe7b5}.high{border-color:#f19371;background:#40281f;color:#ffd1bd}.risk-overview{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}.risk-pill{padding:12px 18px;border-radius:10px;font-size:16px}.risk-pill b{margin-left:10px;font-size:21px}.selection-summary{font-size:16px}table{font-size:15px}th{font-size:13px}.profile b{font-size:14px}.sidebar footer{line-height:1.6}#all{background:#175347;border-color:#338f78;color:#c2f4e4}#all:disabled{opacity:.4}
+@media(max-width:1200px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:700px){.cards,.guide-grid{grid-template-columns:1fr}.matrix{grid-template-columns:60px repeat(3,1fr);gap:7px}.cell{padding:10px;min-height:110px}.cell strong{font-size:30px}.cell span,.axis{font-size:12px}.kpihead{min-height:auto}}
+
+/* Identidad corporativa y jerarquía de indicadores */
+.kpihead>span:first-child{font-size:18px;font-weight:750;line-height:1.35;color:#e7eef9}.kpi .icon{width:60px;height:60px;border-radius:16px}.kpi .icon svg{width:36px;height:36px}.kpihead{min-height:82px}.kpi>strong{text-align:center;margin:24px 0 18px;font-size:clamp(30px,2.7vw,42px);font-variant-numeric:tabular-nums}.kpi>small{display:block;text-align:center;font-size:16px;line-height:1.55}.global-risk h3{font-size:18px;font-weight:750}.global-risk .gaugebox p{font-size:16px}.load-intro{display:flex;align-items:center;gap:20px;margin-bottom:22px}.load-intro h2{margin:0 0 8px}.load-intro p{margin:0;max-width:920px}.load-symbol{display:grid;place-items:center;flex-shrink:0;width:64px;height:64px;background:#192b43;border:1px solid #365579;border-radius:16px;color:#83c5ff}.load-symbol svg{width:38px;height:38px}.profile-button{display:grid;place-items:center;width:46px;height:46px;padding:10px;border-radius:50%;color:#a8d8ff;background:#172d46;border-color:#355b81}.profile-button svg{width:24px;height:24px}.profile-button:hover{background:#254e74;border-color:#83c5ff}.sidebar .course-cta{padding:17px 13px;background:linear-gradient(145deg,#1c2e46,#161c2a);border:1px solid #35516e;border-radius:12px;color:#dbe8fa}.course-cta .cta-label{display:block;color:#9bbfe8;font-size:12px}.course-cta strong{display:block;font-size:23px;line-height:1.2;margin:12px 0;color:#ffba6c}.course-cta p{font-size:13px;line-height:1.5;margin:0 0 12px}.course-cta .cta-caption{font-size:11px;color:#a9c5e4}
+@media(max-width:700px){.load-intro{align-items:flex-start}.load-symbol{width:48px;height:48px}.load-symbol svg{width:28px;height:28px}}
+
+/* Tabla compacta con acciones completas */
+#employees table{table-layout:fixed;min-width:850px;white-space:normal}
+#employees th,#employees td{padding:13px 8px;overflow-wrap:anywhere}
+#employees th{font-size:12px;line-height:1.4}
+#employees th:nth-child(1){width:5%}#employees th:nth-child(2){width:25%}
+#employees th:nth-child(3){width:7%}#employees th:nth-child(4){width:8%}
+#employees th:nth-child(5){width:10%}#employees th:nth-child(6){width:13%}
+#employees th:nth-child(7){width:9%}#employees th:nth-child(8){width:6%}
+#employees th:nth-child(9){width:17%}
+#employees td:nth-child(2) span{display:block;font-weight:600;line-height:1.4}
+#employees td:nth-child(2) small{display:block;color:#a0aec5;font-size:13px;margin-top:5px;line-height:1.4}
+#employees .pdfbutton{font-size:14px;padding:10px 12px;white-space:nowrap;max-width:100%}
+#employees .profile-button{width:38px;height:38px;padding:8px}
+</style>
+</head>
+<body><nav class="sidebar" aria-label="Navegación"><div class="brand">Data Science<br>for Business<small>Retención del talento</small></div><div class="group">ANÁLISIS</div><a href="#load">Cargar datos</a><a href="#summary">Visión general</a><a href="#priorities">Matriz de prioridades</a><a href="#employees">Perfiles de empleados</a><footer class="course-cta"><span class="cta-label">Lleva los datos a la acción</span><strong>PDSM<br>IA Edition</strong><p>Aprende a convertir análisis y modelos en decisiones de negocio.</p><span class="cta-caption">Python · Data Science · IA</span></footer></nav><main>
+<header><div class="tag">DATA SCIENCE FOR BUSINESS · PEOPLE ANALYTICS</div><h1>Retener talento empieza por entender el riesgo</h1><p>Identifica a quién acompañar y dónde concentrar las acciones de retención.</p></header>
+<section id="load" class="panel" aria-label="Cargar datos"><div class="load-intro"><div class="load-symbol" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5M4 19h16M8 15l4-5 4 2 4-7"/><circle cx="12" cy="10" r="1.5"/></svg></div><div><h2>De los datos a las decisiones</h2><p>El <b>Business Analytics</b> ayuda a entender a las personas. El <b>Machine Learning</b> estima su riesgo de salida. Aquí, ambos se unen para orientar las acciones de retención.</p></div></div>
+<div class="toolbar"><label>Cargar archivo de empleados<input id="file" type="file" accept=".csv,text/csv"></label></div>
+<div id="status" class="status" role="status">Carga el archivo de empleados para descubrir las prioridades de retención.</div>
+</section>
+<div id="summary" class="cards">
+<article class="kpi"><div class="kpihead"><span>Empleados analizados</span><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3 21v-3a6 6 0 0 1 12 0v3M17 5a3 3 0 0 1 0 6M18 15a5 5 0 0 1 3 4v2"/></svg></span></div><strong id="total">—</strong><small>La plantilla, en una sola mirada.</small></article>
+<article class="kpi"><div class="kpihead"><span>Tasa histórica de abandono</span><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V4M4 20h16M7 15l5-5 4 3 5-8M16 5h5v5"/></svg></span></div><strong id="rate">—</strong><small id="rateNote">Personas que abandonaron la empresa.</small></article>
+<article class="kpi"><div class="kpihead"><span>Coste estimado de los abandonos históricos</span><span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="3"/><circle cx="12" cy="12" r="3"/><path d="M6 12h.01M18 12h.01"/></svg></span></div><strong id="cost">—</strong><small>Coste de reemplazo estimado de quienes abandonaron.</small></article>
+<article class="kpi global-risk"><div class="gaugebox"><h3>Riesgo medio de abandono</h3><div id="gauge"></div><p class="muted">Estimación global para la plantilla analizada.</p></div></article></div>
+<section id="priorities" class="panel"><div class="right"><h2>Matriz de prioridades</h2></div><p>¿Dónde concentrar los esfuerzos de retención? <b>Selecciona un grupo para ver a sus empleados.</b></p><div class="muted">Mayor prioridad en la esquina superior izquierda: más riesgo y mayor coste de reemplazo.</div><div class="segment-summary"><span>Riesgo alto: <b id="high">—</b> empleados</span><span>Coste de reemplazo si todos salieran: <b id="highCost">—</b></span></div><div class="matrix-layout"><div id="matrix" class="matrix"></div></div><details class="business-guide"><summary>Entender los niveles</summary><div class="guide-grid"><div><h3>Riesgo de salida</h3><div id="riskGuide"></div></div><div><h3>Coste de reemplazo</h3><div id="costGuide"></div></div></div><p class="muted">Una casilla vacía significa que ninguna persona reúne esas dos condiciones.</p></details><div id="riskDiagnostic" class="risk-overview" role="status"></div><div id="scoreDistribution" hidden></div><p id="population" class="muted">Sin datos cargados.</p></section>
+<section id="employees" class="panel"><div class="right"><h2 id="selection">Empleados de la campaña</h2><button id="all">Ver todos los empleados</button></div><p id="activeSegment" class="selection-summary" role="status">Todos los empleados.</p><p id="count" class="muted">Carga un CSV para comenzar.</p><div class="tablewrap"><table><thead><tr><th>ID</th><th>Puesto / departamento</th><th>Horas extra</th><th>Antigüedad</th><th>Riesgo de salida</th><th>Coste de reemplazo</th><th>Grupo del modelo</th><th>Detalle</th><th>Plan de retención</th></tr></thead><tbody id="rows"></tbody></table></div><div class="pagination"><button id="prev">Anterior</button><span id="page">—</span><button id="next">Siguiente</button></div></section>
+<dialog id="detail"><div class="right"><h2 id="detailTitle">Perfil</h2><button id="close">Cerrar</button></div><div id="profile" class="profile"></div></dialog>
+</main>
+<script>
+'use strict';
+const $=id=>document.getElementById(id);
+let data=[],chosen=null,page=0,thresholds={r1:.3,r2:.6,c1:null,c2:null};
+let salaryById=new Map();
+
+const levels=['Bajo','Medio','Alto'],size=20;
+const pct=n=>new Intl.NumberFormat('es-ES',{style:'percent',maximumFractionDigits:1}).format(n);
+const money=n=>new Intl.NumberFormat('es-ES',{style:'currency',currency:'USD',maximumFractionDigits:0,currencyDisplay:'narrowSymbol'}).format(n);
+const moneyExact=n=>new Intl.NumberFormat('es-ES',{style:'currency',currency:'USD',minimumFractionDigits:2,maximumFractionDigits:2,currencyDisplay:'narrowSymbol'}).format(n);
+const classify=(v,a,b)=>v<a?0:v<=b?1:2;
+// Lector CSV: admite comas o punto y coma, comillas, saltos y comillas escapadas.
+function parseCSV(text){
+ text=text.replace(/^\uFEFF/,'');
+ const first=text.split(/\r?\n/)[0];let quoted=false,commas=0,semis=0;
+ for(let i=0;i<first.length;i++){if(first[i]==='"')quoted=!quoted;else if(!quoted){if(first[i]===',')commas++;if(first[i]===';')semis++;}}
+ const sep=semis>commas?';':',';let rows=[],row=[],field='',inside=false;
+ for(let i=0;i<text.length;i++){const c=text[i];if(c==='"'){if(inside&&text[i+1]==='"'){field+='"';i++;}else if(inside||field==='')inside=!inside;else throw Error('Comillas mal formadas en el CSV.');}else if(c===sep&&!inside){row.push(field);field='';}else if((c==='\n'||c==='\r')&&!inside){if(c==='\r'&&text[i+1]==='\n')i++;row.push(field);if(row.some(v=>v.trim()!==''))rows.push(row);row=[];field='';}else field+=c;}
+ if(inside)throw Error('Hay una celda con comillas sin cerrar.');row.push(field);if(row.some(v=>v.trim()!==''))rows.push(row);
+ if(rows.length<2)throw Error('El archivo no contiene perfiles.');
+ const headers=rows.shift().map(v=>v.trim());if(new Set(headers).size!==headers.length)throw Error('Hay columnas duplicadas.');
+ for(const key of ['id','scoring_abandono','impacto_abandono','nodo_final'])if(!headers.includes(key))throw Error('Falta la columna '+key+'. Exporta el índice con index_label="id".');
+ if(headers.includes('abandono')===false)throw Error('Falta abandono para calcular los indicadores históricos.');
+ const ids=new Set();return rows.map((values,i)=>{if(values.length!==headers.length)throw Error('Número de columnas incorrecto en la fila '+(i+2));const obj=Object.fromEntries(headers.map((h,j)=>[h,values[j]]));obj.id=obj.id.trim();if(!obj.id||ids.has(obj.id))throw Error('ID vacío o duplicado en la fila '+(i+2));ids.add(obj.id);
+ for(const k of ['scoring_abandono','impacto_abandono','nodo_final']){const raw=obj[k].trim();obj[k]=raw===''?NaN:Number(raw.replace(',','.'));if(!Number.isFinite(obj[k]))throw Error('Valor inválido en '+k+', empleado '+obj.id);}
+ if(obj.scoring_abandono<0||obj.scoring_abandono>1)throw Error('El scoring debe estar entre 0 y 1, empleado '+obj.id);
+ if(obj.impacto_abandono<0)throw Error('Impacto negativo o ausente, empleado '+obj.id);
+ if(obj.nodo_final<0||!Number.isInteger(obj.nodo_final))throw Error('Nodo final inválido, empleado '+obj.id);
+ if(obj.abandono!=='0'&&obj.abandono!=='1')throw Error('abandono debe contener 0 o 1, empleado '+obj.id);
+ return obj;});
+}
+// La referencia es global y permanece fija al filtrar la matriz.
+function salaryNumber(raw){if(raw===undefined||raw===null||String(raw).trim()==='')return null;const n=Number(String(raw).trim().replace(',','.'));return Number.isFinite(n)&&n>0?n:null;}
+function salaryGroup(d){const keys=['departamento','puesto','nivel_laboral'];if(keys.some(k=>d[k]===undefined||String(d[k]).trim()===''||String(d[k])==='-999'))return null;return JSON.stringify(keys.map(k=>String(d[k]).trim()));}
+function buildSalaryReferences(){
+ salaryById=new Map();const groups=new Map();
+ for(const d of data){const key=salaryGroup(d),monthly=salaryNumber(d.salario_mes);if(key!==null&&monthly!==null){if(!groups.has(key))groups.set(key,[]);groups.get(key).push({id:d.id,monthly});}}
+ for(const d of data){const key=salaryGroup(d),monthly=salaryNumber(d.salario_mes);const peers=key===null?[]:(groups.get(key)||[]).filter(p=>p.id!==d.id);let result={monthly,peers:peers.length,reference:null,gap:null,annual:null,reason:''};
+ if(monthly===null)result.reason='Salario mensual no disponible o inválido.';
+ else if(key===null)result.reason='Falta departamento, puesto o nivel laboral.';
+ else if(peers.length<3)result.reason='Solo '+peers.length+' compañeros comparables; se requieren al menos 3.';
+ else{const amounts=peers.map(p=>p.monthly).sort((a,b)=>a-b),mid=Math.floor(amounts.length/2);result.reference=amounts.length%2?amounts[mid]:(amounts[mid-1]+amounts[mid])/2;result.gap=Math.round(Math.max(0,result.reference-monthly)*100)/100;result.annual=Math.round(result.gap*12*100)/100;}
+ salaryById.set(d.id,result);}
+}
+function salaryResult(d){return salaryById.get(d.id)||{monthly:salaryNumber(d.salario_mes),reference:null,gap:null,annual:null,peers:0,reason:'Sin referencia disponible.'};}
+// Contexto individual para la futura integración Gemini/PDF; no se muestra en el dashboard.
+function getEmployeeContext(id){const employee=data.find(d=>d.id===String(id));if(!employee)throw Error('Empleado no encontrado.');const {abandono,...perfil}=employee;return {perfil,comparacion_salarial:{...salaryResult(employee),referencia:'Mediana de otros empleados del mismo departamento, puesto y nivel',minimo_companeros:3,moneda:'USD',mensualidades:12,caracter:'Escenario interno, no aumento aprobado',costes_incluidos:'Solo salario adicional'}};}
+// Cortes económicos automáticos sobre todo el CSV: percentiles 33 y 67.
+// Los valores empatados siempre quedan en el mismo grupo; no se fuerzan nueve celdas llenas.
+function quantile(values,p){const pos=(values.length-1)*p,lo=Math.floor(pos),hi=Math.ceil(pos);return values[lo]+(values[hi]-values[lo])*(pos-lo);}
+function setImpactCuts(){if(!data.length){thresholds.c1=null;thresholds.c2=null;return;}const values=data.map(d=>d.impacto_abandono).sort((a,b)=>a-b);thresholds.c1=quantile(values,1/3);thresholds.c2=quantile(values,2/3);}
+function classifyImpact(v){return v<=thresholds.c1?0:v<=thresholds.c2?1:2;}
+function cohort(){return data;}
+function selection(){return cohort().filter(d=>!chosen||(classify(d.scoring_abandono,thresholds.r1,thresholds.r2)===chosen.r&&classifyImpact(d.impacto_abandono)===chosen.c)).sort((a,b)=>b.scoring_abandono-a.scoring_abandono||b.impacto_abandono-a.impacto_abandono||a.id.localeCompare(b.id,'es',{numeric:true}));}
+function render(){
+ const all=cohort(),high=all.filter(d=>d.scoring_abandono>thresholds.r2);
+ $('riskGuide').innerHTML='<div class="level low"><b>Bajo</b><span>Menos de '+pct(thresholds.r1)+'</span></div><div class="level medium"><b>Medio</b><span>'+pct(thresholds.r1)+' – '+pct(thresholds.r2)+'</span></div><div class="level high"><b>Alto</b><span>Más de '+pct(thresholds.r2)+'</span></div>';
+ $('costGuide').innerHTML=data.length?'<div class="level low"><b>Bajo</b><span>Hasta '+moneyExact(thresholds.c1)+'</span></div><div class="level medium"><b>Medio</b><span>Más de '+moneyExact(thresholds.c1)+' y hasta '+moneyExact(thresholds.c2)+'</span></div><div class="level high"><b>Alto</b><span>Más de '+moneyExact(thresholds.c2)+'</span></div><p class="muted">Comparación entre los empleados cargados: costes menores, intermedios y mayores.</p>':'Los niveles se calculan al cargar los empleados.';
+ const validTarget=data.length&&data.every(d=>d.abandono==='0'||d.abandono==='1');
+ $('rate').textContent=validTarget?pct(data.filter(d=>d.abandono==='1').length/data.length):'—';
+ $('rateNote').textContent=validTarget?'Personas que abandonaron, sobre '+data.length+' empleados.':'No disponible: abandono debe contener 0/1.';
+ $('total').textContent=data.length?data.length:'—';
+ $('high').textContent=data.length?high.length:'—';$('highCost').textContent=data.length?money(high.reduce((s,d)=>s+d.impacto_abandono,0)):'—';
+ $('cost').textContent=validTarget?money(data.filter(d=>d.abandono==='1').reduce((s,d)=>s+d.impacto_abandono,0)):'—';
+ renderRiskDiagnostic();drawGauge('gauge',data.length?data.reduce((s,d)=>s+d.scoring_abandono,0)/data.length:null);
+ $('population').textContent=data.length?data.length+' empleados distribuidos · La selección solo cambia el listado inferior.':'Sin datos cargados.';
+ const grid=$('matrix');grid.replaceChildren();grid.append(document.createElement('div'));
+ for(const c of [2,1,0]){const h=document.createElement('div');h.className='axis';h.textContent='Impacto '+levels[c].toLowerCase();grid.append(h);}
+ for(const r of [2,1,0]){const h=document.createElement('div');h.className='axis';h.textContent='Riesgo '+levels[r].toLowerCase();grid.append(h);for(const c of [2,1,0]){const b=document.createElement('button');b.className='cell'+(r===2&&c===2?' priority':'');b.setAttribute('aria-pressed',String(!!chosen&&chosen.r===r&&chosen.c===c));const n=all.filter(d=>classify(d.scoring_abandono,thresholds.r1,thresholds.r2)===r&&classifyImpact(d.impacto_abandono)===c).length;const strong=document.createElement('strong');strong.textContent=data.length?n:'—';const label=document.createElement('span');label.textContent='Riesgo '+levels[r].toLowerCase()+' · Impacto '+levels[c].toLowerCase();b.append(strong,label);b.onclick=()=>{chosen={r,c};page=0;render();};grid.append(b);}}
+ $('all').disabled=!chosen;const filtered=selection();$('activeSegment').textContent=chosen?'Seleccionado: riesgo '+levels[chosen.r].toLowerCase()+' e impacto '+levels[chosen.c].toLowerCase()+' · '+filtered.length+' empleados.':'Mostrando todos los empleados: '+filtered.length+'. Selecciona una celda para investigar un grupo.';page=Math.min(page,Math.max(0,Math.ceil(filtered.length/size)-1));$('selection').textContent=chosen?'Riesgo '+levels[chosen.r].toLowerCase()+' · Impacto '+levels[chosen.c].toLowerCase():'Empleados de la campaña';$('count').textContent=filtered.length+' empleados · Primero, quienes tienen mayor riesgo de salida.';
+ const tbody=$('rows');tbody.replaceChildren();for(const d of filtered.slice(page*size,(page+1)*size)){const tr=document.createElement('tr');const values=[d.id,(d.puesto||'—')+' / '+(d.departamento||'—'),d.horas_extra==='Yes'?'Sí':d.horas_extra==='No'?'No':d.horas_extra||'—',d.anos_compania!==undefined&&d.anos_compania!=='-999'?d.anos_compania+' años':'—',pct(d.scoring_abandono),money(d.impacto_abandono),d.nodo_final];for(const [i,v] of values.entries()){const td=document.createElement('td');if(i===1){const puesto=document.createElement('span'),departamento=document.createElement('small');puesto.textContent=d.puesto||'—';departamento.textContent=d.departamento||'—';td.append(puesto,departamento);}else td.textContent=v;tr.append(td);}const td=document.createElement('td'),b=document.createElement('button');b.className='profile-button';b.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 22v-2a8 8 0 0 1 16 0v2"/></svg>';b.title='Ver perfil';b.setAttribute('aria-label','Ver perfil del empleado '+d.id);b.onclick=()=>showProfile(d);td.append(b);tr.append(td);const planCell=document.createElement('td'),plan=document.createElement('button');plan.textContent='Informe PDF';plan.className='pdfbutton';plan.disabled=false;plan.title='Generar informe personalizado';plan.setAttribute('aria-label','Generar informe del empleado '+d.id);plan.onclick=()=>descargarInforme(d.id,plan);planCell.append(plan);tr.append(planCell);tbody.append(tr);}
+ if(!filtered.length){const tr=document.createElement('tr'),td=document.createElement('td');td.colSpan=9;td.textContent='No hay empleados en esta selección.';tr.append(td);tbody.append(tr);}
+ $('page').textContent=filtered.length?'Página '+(page+1)+' de '+Math.ceil(filtered.length/size):'0 perfiles';$('prev').disabled=page===0;$('next').disabled=(page+1)*size>=filtered.length;
+}
+function drawGauge(id,value){
+ const host=$(id),angle=Math.PI*(1-(value??0)),x=100+72*Math.cos(angle),y=94-72*Math.sin(angle);
+ function arc(from,to,color){if(to<=from)return '';const point=v=>[100+72*Math.cos(Math.PI*(1-v)),94-72*Math.sin(Math.PI*(1-v))];const a=point(from),b=point(to);return '<path d="M '+a[0]+' '+a[1]+' A 72 72 0 '+(to-from>.5?1:0)+' 1 '+b[0]+' '+b[1]+'" fill="none" stroke="'+color+'" stroke-width="14"/>';}
+ host.innerHTML='<svg viewBox="0 0 200 125" role="img" aria-label="'+(value===null?'Sin datos':'Riesgo medio de abandono '+pct(value))+'">'+arc(0,thresholds.r1,'#36b9a4')+arc(thresholds.r1,thresholds.r2,'#d5ac56')+arc(thresholds.r2,1,'#e98763')+(value===null?'':'<line x1="100" y1="94" x2="'+x+'" y2="'+y+'" stroke="#e7ecf4" stroke-width="3"/><circle cx="100" cy="94" r="5" fill="#e7ecf4"/>')+'<text x="100" y="121" text-anchor="middle" fill="#e7ecf4" font-size="20">'+(value===null?'—':pct(value))+'</text><text x="16" y="112" fill="#a0aec5" font-size="10">0 %</text><text x="166" y="112" fill="#a0aec5" font-size="10">100 %</text></svg>';
+}
+function renderRiskDiagnostic(){
+ const counts=[0,0,0],distribution=new Map();for(const d of cohort()){counts[classify(d.scoring_abandono,thresholds.r1,thresholds.r2)]++;distribution.set(d.scoring_abandono,(distribution.get(d.scoring_abandono)||0)+1);}
+ $('riskDiagnostic').innerHTML=data.length?'<span class="risk-pill low">Riesgo bajo <b>'+counts[0]+'</b></span><span class="risk-pill medium">Riesgo medio <b>'+counts[1]+'</b></span><span class="risk-pill high">Riesgo alto <b>'+counts[2]+'</b></span>':'Carga los empleados para descubrir las prioridades.';
+ const host=$('scoreDistribution');host.replaceChildren();for(const [score,count]of [...distribution].sort((a,b)=>a[0]-b[0])){const span=document.createElement('span');span.className='score-chip';span.textContent=pct(score)+' · '+count+' empleados';host.append(span);}
+}
+
+const informesEnCurso = new Set();
+async function descargarInforme(id, boton) {
+ if (informesEnCurso.has(String(id))) return;
+ informesEnCurso.add(String(id));
+ boton.disabled=true;boton.textContent='Generando…';
+ try {
+  const respuesta=await fetch('/api/informe', {
+   method:'POST',headers:{'Content-Type':'application/json'},
+   body:JSON.stringify({id:String(id)})
+  });
+  if (!respuesta.ok) {
+   const detalle=await respuesta.json().catch(()=>null);
+   throw new Error(detalle?.error || (respuesta.status===501
+    ? 'El servicio activo solo abre el HTML. Ejecuta la nueva celda de arranque del notebook.'
+    : 'No se ha podido generar el informe. Revisa el notebook e inténtalo de nuevo.'));
+  }
+  if (!(respuesta.headers.get('Content-Type')||'').includes('application/pdf'))
+   throw new Error('El servicio no ha devuelto un PDF. Revisa la celda de arranque.');
+  const pdf=await respuesta.blob();const url=URL.createObjectURL(pdf);
+  const enlace=document.createElement('a');enlace.href=url;
+  enlace.download='informe_retencion_'+id+'.pdf';document.body.append(enlace);
+  enlace.click();enlace.remove();setTimeout(()=>URL.revokeObjectURL(url),60000);
+ } catch(error) {
+  alert(error.message||'No se ha podido conectar con el servicio Python.');
+ } finally {
+  informesEnCurso.delete(String(id));boton.disabled=false;boton.textContent='Informe PDF';
+ }
+}
+
+function clearSelection(){chosen=null;page=0;render();}
+function showProfile(d){$('detailTitle').textContent='Empleado '+d.id;$('profile').replaceChildren();for(const [k,v]of Object.entries(d)){const p=document.createElement('p'),b=document.createElement('b');b.textContent=({scoring_abandono:'Riesgo de salida',nodo_final:'Grupo del modelo',impacto_abandono:'Coste de reemplazo',abandono:'Abandono registrado',salario_mes:'Salario mensual',salario_ano:'Salario anual',anos_compania:'Antigüedad en la empresa'})[k]||k.replaceAll('_',' ');let shown=k==='scoring_abandono'?pct(v):k==='impacto_abandono'?money(v):v;if(shown===''||shown==='-999')shown='No disponible';p.append(b,document.createTextNode(String(shown)));$('profile').append(p);}$('detail').showModal();}
+ $('file').onchange=async()=>{const f=$('file').files[0];if(!f)return;try{const parsed=parseCSV(await f.text());data=parsed;buildSalaryReferences();setImpactCuts();chosen=null;page=0;$('detail').close();$('status').className='status';$('status').textContent=f.name+' · '+data.length+' empleados cargados · Análisis listo.';render();}catch(e){$('status').className='status error';$('status').textContent='No se ha cargado el archivo: '+e.message;}};
+ $('all').onclick=clearSelection;$('prev').onclick=()=>{page--;render();};$('next').onclick=()=>{page++;render();};$('close').onclick=()=>$('detail').close();render();
+</script></body></html>
