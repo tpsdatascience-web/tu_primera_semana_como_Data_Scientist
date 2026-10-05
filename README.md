@@ -97,7 +97,7 @@ habilitados para tu cuenta.
 - **Matplotlib:** librería para visualizar los resultados.
 - **scikit-learn:** librería para construir el modelo predictivo.
 - **Streamlit:** framework que permitirá explorar los resultados en un dashboard.
-- **Gemini:** IA redactar propuestas de retención en lenguaje natural.
+- **Gemini:** IA que permitirá redactar propuestas de retención en lenguaje natural.
 
 Las predicciones orientan el análisis: no garantizan que un empleado
 vaya a abandonar ni que una acción concreta evite su salida.
