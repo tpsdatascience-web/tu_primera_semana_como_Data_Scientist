@@ -91,12 +91,13 @@ habilitados para tu cuenta.
 
 ## Herramientas que utilizarás
 
-- **Python y Jupyter:** trabajar paso a paso con los datos.
-- **pandas y NumPy:** preparar y analizar la información.
-- **Matplotlib:** visualizar los resultados.
-- **scikit-learn:** construir el modelo predictivo.
-- **Streamlit:** explorar los resultados en un dashboard.
-- **Gemini:** redactar propuestas de retención en lenguaje natural.
+- **Python:** será el lenguaje de programación.
+  **Jupyter:** este formato permitirá trabajar paso a paso con los datos.
+- **pandas y NumPy:** dos de las librerías esenciales para preparar y analizar la información.
+- **Matplotlib:** librería para visualizar los resultados.
+- **scikit-learn:** librería para construir el modelo predictivo.
+- **Streamlit:** framework que permitirá explorar los resultados en un dashboard.
+- **Gemini:** IA redactar propuestas de retención en lenguaje natural.
 
 Las predicciones orientan el análisis: no garantizan que un empleado
 vaya a abandonar ni que una acción concreta evite su salida.
