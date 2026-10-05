@@ -92,7 +92,7 @@ habilitados para tu cuenta.
 ## Herramientas que utilizarás
 
 - **Python:** será el lenguaje de programación.
-  **Jupyter:** este formato permitirá trabajar paso a paso con los datos.
+- **Jupyter:** este formato permitirá trabajar paso a paso con los datos.
 - **pandas y NumPy:** dos de las librerías esenciales para preparar y analizar la información.
 - **Matplotlib:** librería para visualizar los resultados.
 - **scikit-learn:** librería para construir el modelo predictivo.
