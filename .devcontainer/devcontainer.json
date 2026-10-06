@@ -1,13 +1,13 @@
 {
   "name": "TPS Data Science",
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu24.04",
   "features": {
     "ghcr.io/devcontainers/features/python:1": {
       "version": "3.12.11"
     }
   },
   "forwardPorts": [8501],
-  "postCreateCommand": "python -m pip install -r requirements.txt",
+  "postCreateCommand": "sudo apt-get update && sudo apt-get install -y libpango-1.0-0 libpangoft2-1.0-0 libharfbuzz0b libharfbuzz-subset0 fonts-dejavu-core fonts-liberation && python -m pip install -r requirements.txt",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -16,4 +16,4 @@
       ]
     }
   }
-}
+}
